@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado y Programación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Resultado y Programación</h1>
+</header>
+
+<h2>Selecciona fecha u asoción que deseas consultar.</h2>
+
+<div class="menu-container">
+    <div class="menu-desplegable">
+        <label for="fechas-rodeos">Fecha deportiva:</label>
+        <select id="fechas-rodeos">
+            <option>Fecha 1: 16 y 17 Noviembre </option>
+            <option>23 y 24 Noviembre-Fecha_2 </option>
+            <option>30 y 1 Octubre-Fecha-3 </option>
+        </select>
+    </div>
+
+    <div class="menu-desplegable">
+        <label for="fechas-rodeos">Asociación:</label>
+        <select id="fechas-rodeos">
+            <option>Asociación_Arica</option>
+            <option>Asociación_Atacama</option>
+            <option>Asociación_Santiago</option>
+        </select>
+    </div>
+</div>
+
+<h2>Detalle de rodeos 19 Nombiembre - fecha_3.</h2>
+
+<!-- Tabla con la información -->
+<div class="tabla-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Club</th>
+                <th>Asociación</th>
+                <th>Tipo de Rodeo</th>
+                <th>Medialuna</th>
+                <th>Transmite</th>
+                <th>Participan</th>
+                <th>Puntaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10:00</td>
+                <td>Club San Miguel</td>
+                <td>Asociación Santiago</td>
+                <td>Clasificatorio</td>
+                <td>Medialuna Grande</td>
+                <td>Johnny Fotografías</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">14</span></td>
+            </tr>
+            <tr>
+                <td>12:30</td>
+                <td>Club Gil Letelier</td>
+                <td>Asociación Santiago</td>
+                <td>Provincial</td>
+                <td>Medialuna Norte</td>
+                <td>JP Rodeos Live</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">18</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interregional</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">28</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Pop-up oculto -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="cerrarPopup()">&times;</span>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lugar</th>
+                    <th>Collera</th>
+                    <th>Jinetes</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1er Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>2do Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>3er Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>25</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Botón "Volver a Home" -->
+<div class="volver-home">
+    <button onclick="window.location.href='prog_resultado.html'">Volver a Home</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

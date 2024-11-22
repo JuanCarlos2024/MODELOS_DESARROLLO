@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado y Programación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Resultado y Programación</h1>
+</header>
+
+<h2>Selecciona fecha u asoción que deseas consultar.</h2>
+
+<div class="menu-container">
+    <div class="menu-desplegable">
+        <label for="fechas-rodeos">Fecha deportiva:</label>
+        <select id="fechas-rodeos">
+            <option>16 y 17 Noviembre-Fecha_1</option>
+            <option>23 y 24 Noviembre-Fecha_2</option>
+            <option>30 y 1 Octubre-Fecha-3</option>
+        </select>
+    </div>
+
+    <div class="menu-desplegable">
+        <label for="asociaciones">Asociación:</label>
+        <select id="asociaciones" onchange="redirigirAsociacion()">
+            <option value="">Seleccione una asociación</option>
+            <option value="arica">Asociación_Arica</option>
+            <option value="atacama">Asociación_Atacama</option>
+            <option value="santiago">Asociación_Santiago</option>
+        </select>
+    </div>
+</div>
+
+<!-- Encabezado del detalle del rodeo -->
+<h2 class="detalle-rodeo">Detalle de rodeos 19 Noviembre - fecha_3.</h2>
+
+<div class="tabla-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Club</th>
+                <th>Asociación</th>
+                <th>Tipo de Rodeo</th>
+                <th>Medialuna</th>
+                <th>Transmite</th>
+                <th>Participan</th>
+                <th>Resultados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10:00</td>
+                <td>Club Arica</td>
+                <td>Asociación Arica</td>
+                <td>Provincial 3 Series Especial</td>
+                <td>Medialuna Grande</td>
+                <td>Johnny Fotografías</td>
+                <td><a href="pdf_2.pdf" target="_blank">Ver lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">24</span></td>
+            </tr>
+            <tr>
+                <td>12:30</td>
+                <td>Club Atacama</td>
+                <td>Asociación Atacama</td>
+                <td>Provincial</td>
+                <td>Medialuna Norte</td>
+                <td>JP Rodeos Live</td>
+                <td><a href="planilla.pdf" download="Planilla Rodeo">Descargar lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">44</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td><a href="planilla.pdf" target="_blank">Ver lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">18</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Litoral Central</td>
+                <td>Interasociaciones Limitado 25 colleras</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td><a href="pdf_2.pdf" download="Planilla Rodeo">Descargar lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">27</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago Oriente</td>
+                <td>Provincial 1 dia</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">31</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Petorca</td>
+                <td>Para Criadores</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">19</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Pop-up actualizado -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="cerrarPopup()">&times;</span>
+
+        <!-- Información dinámica del rodeo -->
+        <div id="detalles-popup">
+            <p><strong>Club:</strong> <span id="popup-club"></span></p>
+            <p><strong>Asociación:</strong> <span id="popup-asociacion"></span></p>
+            <p><strong>Tipo de Rodeo:</strong> <span id="popup-tipo"></span></p>
+        </div>
+
+        <!-- Tabla de resultados -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Lugar</th>
+                    <th>Collera</th>
+                    <th>Jinetes</th>
+                    <th>Puntos</th>
+                    <th>Ver Video</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1er Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>35</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/s4nG0EpLMXI')">
+                            Ver Video
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2do Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>31</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/35Te0wu3YRc')">
+                            Ver Video
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3er Lugar</td>
+                    <td>Sembrado<br>Pelantaro</td>
+                    <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
+                    <td>25</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/0HiFo6WwLwQ?start=89')">
+                            Ver Video
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Contenedor para el video -->
+        <div id="video-container" class="video-container">
+            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Botón "Volver a Home" -->
+<div class="volver-home">
+    <button onclick="window.location.href='prog_resultado.html'">Volver a Home</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
