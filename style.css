@@ -1,3 +1,4 @@
+
 /* General */
 body {
     font-family: Arial, sans-serif;
@@ -86,7 +87,7 @@ td {
 .popup {
     display: none;
     position: fixed;
-    top: 10%; /* Más arriba en la pantalla */
+    top: 10%; /* Centrado un poco más arriba */
     left: 50%;
     transform: translate(-50%, -10%);
     width: 100%;
@@ -100,17 +101,17 @@ td {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Ancho adaptado para móviles */
-    max-width: 400px; /* Asegura que no sea demasiado grande en pantallas grandes */
+    width: 90%; /* Ancho para móviles */
+    max-width: 600px; /* Mayor ancho para pantallas grandes */
     margin: 0 auto;
     position: relative;
     display: flex;
-    flex-direction: column; /* Diseño vertical */
-    align-items: center; /* Centra el contenido horizontalmente */
+    flex-direction: column;
+    align-items: center;
     gap: 15px; /* Espacio cómodo entre los elementos */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Mejora visual para dispositivos */
-    overflow-y: auto; /* Habilita el desplazamiento vertical cuando el contenido es largo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
     max-height: 80vh; /* Limita la altura para que no ocupe toda la pantalla */
 }
 
@@ -133,8 +134,9 @@ td {
 /* Video del pop-up */
 #video-iframe {
     width: 100%;
-    height: auto; /* Mantiene la proporción en pantallas pequeñas */
-    max-width: 320px; /* Máximo ancho del video */
+    height: auto;
+    max-width: 500px; /* Tamaño más grande del video */
+    max-height: 300px; /* Mayor altura */
     border-radius: 8px;
 }
 
@@ -212,19 +214,19 @@ td {
 @media screen and (max-width: 480px) {
     .popup-content {
         padding: 15px;
-        gap: 10px; /* Reduce espacio entre elementos */
+        gap: 10px;
     }
 
     #detalles-popup {
-        font-size: 14px; /* Tamaño más pequeño para texto */
+        font-size: 14px;
     }
 
     #video-iframe {
-        max-width: 100%; /* Ocupa todo el ancho disponible */
-        height: auto; /* Ajusta automáticamente el alto */
+        max-width: 100%;
+        height: auto;
     }
 
     .close {
-        font-size: 20px; /* Botón más pequeño */
+        font-size: 20px;
     }
 }
