@@ -17,10 +17,10 @@
 <div class="menu-container">
     <div class="menu-desplegable">
         <label for="fechas-rodeos">Fecha deportiva:</label>
-        <select id="fechas-rodeos">
-            <option>16 y 17 Noviembre-Fecha_1</option>
-            <option>23 y 24 Noviembre-Fecha_2</option>
-            <option>30 y 1 Octubre-Fecha-3</option>
+        <select id="fechas-rodeos" onchange="redirigirFecha()">
+            <option value="fecha_1">16 y 17 Noviembre-Fecha_1</option>
+            <option value="fecha_2">23 y 24 Noviembre-Fecha_2</option>
+            <option value="fecha_3">30 y 1 Octubre-Fecha-3</option>
         </select>
     </div>
 
@@ -34,6 +34,9 @@
         </select>
     </div>
 </div>
+
+
+
 
 <!-- Encabezado del detalle del rodeo -->
 <h2 class="detalle-rodeo">Detalle de rodeos 19 Noviembre - fecha_3.</h2>
@@ -70,7 +73,7 @@
                 <td>Provincial</td>
                 <td>Medialuna Norte</td>
                 <td>JP Rodeos Live</td>
-                <td><a href="planilla.pdf" download="Planilla Rodeo">Descargar lista</a></td>
+                <td><a href="pdf_2.pdf" download="Planilla Rodeo">Descargar lista</a></td>
                 <td><span class="puntaje" onclick="mostrarPopup()">44</span></td>
             </tr>
             <tr>
@@ -80,7 +83,7 @@
                 <td>Interasociaciones</td>
                 <td>Medialuna Central</td>
                 <td>Servicios para Rodeo</td>
-                <td><a href="planilla.pdf" target="_blank">Ver lista</a></td>
+                <td><a href="pdf_2.pdf" target="_blank">Ver lista</a></td>
                 <td><span class="puntaje" onclick="mostrarPopup()">18</span></td>
             </tr>
             <tr>
@@ -113,6 +116,76 @@
                 <td>Ver lista</td>
                 <td><span class="puntaje" onclick="mostrarPopup()">19</span></td>
             </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Magallanes</td>
+                <td>Libre</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">27</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Malleco</td>
+                <td>Provincial 3 series</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">33</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Coquimbo</td>
+                <td>1ra con puntos</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">33</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">14</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">37</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">29</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">27</span></td>
+            </tr>
         </tbody>
     </table>
 </div>
@@ -136,7 +209,6 @@
                     <th>Collera</th>
                     <th>Jinetes</th>
                     <th>Puntos</th>
-                    <th>Ver Video</th>
                 </tr>
             </thead>
             <tbody>
@@ -145,47 +217,22 @@
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>35</td>
-                    <td>
-                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/s4nG0EpLMXI')">
-                            Ver Video
-                        </button>
-                    </td>
                 </tr>
                 <tr>
                     <td>2do Lugar</td>
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>31</td>
-                    <td>
-                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/35Te0wu3YRc')">
-                            Ver Video
-                        </button>
-                    </td>
                 </tr>
                 <tr>
                     <td>3er Lugar</td>
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>25</td>
-                    <td>
-                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/0HiFo6WwLwQ?start=89')">
-                            Ver Video
-                        </button>
-                    </td>
                 </tr>
             </tbody>
         </table>
-
-        <!-- Contenedor para el video -->
-        <div id="video-container" class="video-container">
-            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
     </div>
-</div>
-
-<!-- Botón "Volver a Home" -->
-<div class="volver-home">
-    <button onclick="window.location.href='index.html'">Volver a Home</button>
 </div>
 
 <script src="script.js"></script>

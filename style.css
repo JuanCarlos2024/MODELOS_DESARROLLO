@@ -1,4 +1,3 @@
-
 /* General */
 body {
     font-family: Arial, sans-serif;
@@ -44,7 +43,7 @@ select {
     border-radius: 5px;
 }
 
-/* Tabla */
+/* Tabla principal */
 .tabla-container {
     width: 90%;
     margin: 20px auto;
@@ -83,11 +82,85 @@ td {
     line-height: 1.5;
 }
 
-/* Pop-up */
+/* Estado (Círculos) */
+.circle-red {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.circle-green {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.circle-blue {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Botón Ver/Ocultar Detalles */
+.ver-detalle {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ver-detalle:hover {
+    background-color: #cc0000;
+}
+
+/* Fila Detalle */
+.detalle-fila.oculto {
+    display: none;
+}
+
+.detalle-contenido {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Tablas en Fila Detalle */
+.tabla-detalle {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.tabla-detalle th,
+.tabla-detalle td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla-detalle th {
+    background-color: hsl(0, 61%, 45%);
+    color: white;
+}
+
+/* Pop-ups */
 .popup {
     display: none;
     position: fixed;
-    top: 10%; /* Centrado un poco más arriba */
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
     width: 100%;
@@ -96,51 +169,32 @@ td {
     z-index: 1000;
 }
 
-/* Contenido del Pop-up */
 .popup-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* Ancho para móviles */
-    max-width: 600px; /* Mayor ancho para pantallas grandes */
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Espacio cómodo entre los elementos */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    max-height: 80vh; /* Limita la altura para que no ocupe toda la pantalla */
+    max-height: 80vh;
 }
 
-/* Texto del pop-up */
-#detalles-popup {
+/* Texto en Pop-ups */
+.popup-content p {
     font-size: 16px;
-    line-height: 1.5;
     color: #333;
 }
 
-#detalles-popup p {
-    margin: 5px 0;
-}
-
-#detalles-popup span {
+.popup-content span {
     font-weight: bold;
     color: hsl(0, 61%, 45%);
 }
 
-/* Video del pop-up */
-#video-iframe {
-    width: 100%;
-    height: auto;
-    max-width: 500px; /* Tamaño más grande del video */
-    max-height: 300px; /* Mayor altura */
-    border-radius: 8px;
-}
-
-/* Botón de cerrar */
+/* Botón Cerrar */
 .close {
     position: absolute;
     top: 10px;
@@ -150,83 +204,77 @@ td {
     color: #343a40;
 }
 
-/* Botón Volver */
-.volver-home {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.volver-home button {
-    background-color: #bd2e2e;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.volver-home button:hover {
-    background-color: #1755da;
-}
-
-/* Iconos de YouTube */
-.youtube-link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.youtube-link img.youtube-icon {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.youtube-link img.youtube-icon:hover {
-    transform: scale(1.1);
-}
-
-.youtube-link p {
-    font-size: 14px;
-    margin-top: 5px;
-    color: #555;
-}
-
-/* Botón de video */
-.video-btn {
-    background-color: #FF0000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
-}
-
-.video-btn:hover {
-    background-color: #CC0000;
-}
-
-/* Responsivo para pantallas pequeñas */
+/* Responsivo para Pantallas Pequeñas */
 @media screen and (max-width: 480px) {
-    .popup-content {
-        padding: 15px;
-        gap: 10px;
+    .detalle-contenido {
+        padding: 10px;
     }
 
-    #detalles-popup {
+    .tabla-detalle th,
+    .tabla-detalle td {
         font-size: 14px;
     }
 
-    #video-iframe {
-        max-width: 100%;
-        height: auto;
+    .popup-content {
+        padding: 15px;
     }
 
     .close {
         font-size: 20px;
     }
 }
+/* Separador visual */
+.separador {
+    margin: 20px 0;
+    border-top: 2px solid #ddd;
+}
+
+/* Títulos de secciones */
+.titulo-seccion {
+    margin: 15px 0;
+    font-size: 20px;
+    color: hsl(0, 61%, 45%);
+    text-align: left;
+}
+
+        /* Estilo del menú */
+        .menu {
+            background-color: hsl(0, 61%, 45%);; /* Rojo */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .menu a:hover {
+            background-color: hsl(0, 61%, 45%); /* Dorado más oscuro */
+            transform: scale(1.1);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }

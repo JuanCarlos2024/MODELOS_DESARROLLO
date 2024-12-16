@@ -84,3 +84,12 @@ function cerrarPopup() {
             window.location.href = "prog_2.html";  // Redirige a prog_resultado.html para Fecha_3
         }
     }
+
+    function mostrarPopupSiglas() {
+        document.getElementById('popup-siglas').style.display = 'block';
+    }
+    
+    function cerrarPopupSiglas() {
+        document.getElementById('popup-siglas').style.display = 'none';
+    }
+
