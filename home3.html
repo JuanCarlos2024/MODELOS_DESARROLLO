@@ -1,13 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Navegación</title>
+    <title>Resultado y Programación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Menu</a>
@@ -57,6 +59,7 @@
         </div>
       </nav>
 
+
 <header>
     <h1>Resultado y Programación</h1>
 </header>
@@ -67,25 +70,26 @@
     <div class="menu-desplegable">
         <label for="fechas-rodeos">Fecha deportiva:</label>
         <select id="fechas-rodeos">
-            <option>Fecha 1: 16 y 17 Noviembre </option>
-            <option>23 y 24 Noviembre-Fecha_2 </option>
-            <option>30 y 1 Octubre-Fecha-3 </option>
+            <option>16 y 17 Noviembre-Fecha_1</option>
+            <option>23 y 24 Noviembre-Fecha_2</option>
+            <option>30 y 1 Octubre-Fecha-3</option>
         </select>
     </div>
 
     <div class="menu-desplegable">
-        <label for="fechas-rodeos">Asociación:</label>
-        <select id="fechas-rodeos">
-            <option>Asociación_Arica</option>
-            <option>Asociación_Atacama</option>
-            <option>Asociación_Santiago</option>
+        <label for="asociaciones">Asociación:</label>
+        <select id="asociaciones" onchange="redirigirAsociacion()">
+            <option value="">Seleccione una asociación</option>
+            <option value="arica">Asociación_Arica</option>
+            <option value="atacama">Asociación_Atacama</option>
+            <option value="santiago">Asociación_Santiago</option>
         </select>
     </div>
 </div>
 
-<h2>Detalle de rodeos 19 Nombiembre - fecha_3.</h2>
+<!-- Encabezado del detalle del rodeo -->
+<h2 class="detalle-rodeo">Detalle de rodeos 19 Noviembre - fecha_3.</h2>
 
-<!-- Tabla con la información -->
 <div class="tabla-container">
     <table>
         <thead>
@@ -97,48 +101,86 @@
                 <th>Medialuna</th>
                 <th>Transmite</th>
                 <th>Participan</th>
-                <th>Puntaje</th>
+                <th>Resultados</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>10:00</td>
-                <td>Club San Miguel</td>
-                <td>Asociación Santiago</td>
-                <td>Clasificatorio</td>
+                <td>Club Arica</td>
+                <td>Asociación Arica</td>
+                <td>Provincial 3 Series Especial</td>
                 <td>Medialuna Grande</td>
                 <td>Johnny Fotografías</td>
-                <td>Ver lista</td>
-                <td><span class="puntaje" onclick="mostrarPopup()">14</span></td>
+                <td><a href="pdf_2.pdf" target="_blank">Ver lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">24</span></td>
             </tr>
             <tr>
                 <td>12:30</td>
-                <td>Club Gil Letelier</td>
-                <td>Asociación Santiago</td>
+                <td>Club Atacama</td>
+                <td>Asociación Atacama</td>
                 <td>Provincial</td>
                 <td>Medialuna Norte</td>
                 <td>JP Rodeos Live</td>
-                <td>Ver lista</td>
-                <td><span class="puntaje" onclick="mostrarPopup()">18</span></td>
+                <td><a href="planilla.pdf" download="Planilla Rodeo">Descargar lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">44</span></td>
             </tr>
             <tr>
                 <td>15:00</td>
                 <td>Club Santiago</td>
                 <td>Asociación Santiago</td>
-                <td>Interregional</td>
+                <td>Interasociaciones</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td><a href="planilla.pdf" target="_blank">Ver lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">18</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Litoral Central</td>
+                <td>Interasociaciones Limitado 25 colleras</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td><a href="pdf_2.pdf" download="Planilla Rodeo">Descargar lista</a></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">27</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Santiago Oriente</td>
+                <td>Provincial 1 dia</td>
                 <td>Medialuna Central</td>
                 <td>Servicios para Rodeo</td>
                 <td>Ver lista</td>
-                <td><span class="puntaje" onclick="mostrarPopup()">28</span></td>
+                <td><span class="puntaje" onclick="mostrarPopup()">31</span></td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>Club Santiago</td>
+                <td>Asociación Petorca</td>
+                <td>Para Criadores</td>
+                <td>Medialuna Central</td>
+                <td>Servicios para Rodeo</td>
+                <td>Ver lista</td>
+                <td><span class="puntaje" onclick="mostrarPopup()">19</span></td>
             </tr>
         </tbody>
     </table>
 </div>
-
-<!-- Pop-up oculto -->
+<!-- Pop-up actualizado -->
 <div id="popup" class="popup">
     <div class="popup-content">
         <span class="close" onclick="cerrarPopup()">&times;</span>
+
+        <!-- Información dinámica del rodeo -->
+        <div id="detalles-popup">
+            <p><strong>Club:</strong> <span id="popup-club"></span></p>
+            <p><strong>Asociación:</strong> <span id="popup-asociacion"></span></p>
+            <p><strong>Tipo de Rodeo:</strong> <span id="popup-tipo"></span></p>
+        </div>
+
+        <!-- Tabla de resultados -->
         <table>
             <thead>
                 <tr>
@@ -146,6 +188,7 @@
                     <th>Collera</th>
                     <th>Jinetes</th>
                     <th>Puntos</th>
+                    <th>Ver Video</th>
                 </tr>
             </thead>
             <tbody>
@@ -154,21 +197,41 @@
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>35</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/s4nG0EpLMXI')">
+                            Ver Video
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>2do Lugar</td>
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>31</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/35Te0wu3YRc')">
+                            Ver Video
+                        </button>
+                    </td>
                 </tr>
                 <tr>
                     <td>3er Lugar</td>
                     <td>Sembrado<br>Pelantaro</td>
                     <td>Calderón Ortiz Manuel<br>López Santibáñez Tomás Jesús</td>
                     <td>25</td>
+                    <td>
+                        <button class="video-btn" onclick="mostrarVideo('https://www.youtube.com/embed/0HiFo6WwLwQ?start=89')">
+                            Ver Video
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+
+        <!-- Contenedor para el video -->
+        <div id="video-container" class="video-container">
+            <iframe id="video-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
