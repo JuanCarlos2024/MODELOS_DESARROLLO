@@ -7,66 +7,344 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="home.html">Menu</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Estadistica
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Colleras</a></li>
-                    <ul><a class="dropdown-item" href="colleras_completas.html">Completas</a></ul>
-                    <ul><a class="dropdown-item" href="colleras_asignadas.html">Asignadas</a></ul>
-                    <ul><a class="dropdown-item" href="colleras_requisito.html">Requisito</a></ul>
-                  <li><a class="dropdown-item" href="#">Rodeos</a></li>
-                    <ul>Asociaciones</ul>
-                    <ul>Clubes</ul>
-                    <ul>Categorias</ul>
-                  <li><a class="dropdown-item" href="zonas.html">Zonas</a></li>
-                  <li><a class="dropdown-item" href="ranking.html">Ranking</a></li>
-                  <li><a class="dropdown-item" href="series.html">Series</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>             
-            </ul>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Programación
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="grupo_fecha.html">Fecha</a></li>
-                      <li><a class="dropdown-item" href="#">Asociaciones</a></li>
-                    </ul>
-                  </li>             
-                </ul>                      
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-                      <!-- Título principal con el ícono del caballo -->
-    <div class="container text-center mt-5">
-        <h1 class="display-4">
-            <i class="fa-solid fa-horse"></i> Página de FEDERACIÓN DE RODEO CHILENO
-        </h1>
-        <p class="lead">COLLERAS COMPLETAS</p>
-        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/35/horse-1297510_1280.png" 
-             alt="Caballo" class="img-fluid" style="max-height: 300px;">
+
+
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.filter-section {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.zone-norte th {
+  background-color: #ffcccc;
+}
+
+.zone-centro th {
+  background-color: #ccffcc;
+}
+
+.zone-sur th {
+  background-color: #ccccff;
+}
+</style>
+</header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">Menu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Estadistica
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Colleras</a></li>
+              <ul><a class="dropdown-item" href="colleras_completas.html">Completas</a></ul>
+              <ul><a class="dropdown-item" href="colleras_asignadas.html">Asignadas</a></ul>
+              <ul><a class="dropdown-item" href="colleras_requisito.html">Requisito</a></ul>
+            <li><a class="dropdown-item" href="#">Rodeos</a></li>
+              <ul>Asociaciones</ul>
+              <ul>Clubes</ul>
+              <ul>Categorias</ul>
+            <li><a class="dropdown-item" href="zonas.html">Zonas</a></li>
+            <li><a class="dropdown-item" href="ranking.html">Ranking</a></li>
+            <li><a class="dropdown-item" href="series.html">Series</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>             
+      </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Programación
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="grupo_fecha.html">Fecha</a></li>
+                <li><a class="dropdown-item" href="#">Asociaciones</a></li>
+              </ul>
+            </li>             
+          </ul>                      
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
     </div>
+  </div>
+</nav>
+
+<header>
+  <h1>Colleras Completas</h1>
+</header>
+
+<body>
+
+
+    <div class="filter-section">
+      <select id="filter-type" onchange="updateFilters()">
+        <option value="weekend">Colleras Completas por Fin de Semana/Fecha</option>
+        <option value="association">Colleras Completas por Asociación</option>
+        <option value="zone">Colleras Completas por Zona</option>
+      </select>
+    
+      <select id="month-filter" class="hidden">
+        <option value="febrero2024">Febrero 2024</option>
+        <option value="marzo2024">Marzo 2024</option>
+        <option value="abril2024">Abril 2024</option>
+        <!-- Añade más meses hasta febrero 2025 -->
+        <option value="febrero2025">Febrero 2025</option>
+      </select>
+    
+      <select id="association-filter" class="hidden" onchange="showTableByAssociation()">
+        <option value="">Selecciona una Asociación</option>
+        <option value="arica">Arica</option>
+        <option value="atacama">Atacama</option>
+        <option value="santiago">Santiago</option>
+        <option value="llanquihue">Llanquihue</option>
+      </select>
+    
+      <select id="zone-filter" class="hidden">
+        <option value="norte">Zona Norte</option>
+        <option value="centro">Zona Centro</option>
+        <option value="sur">Zona Sur</option>
+      </select>
+    </div>
+    
+    <table id="general-table">
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th>Fecha</th>
+          <th>Collera Completa</th>
+          <th>Asociación</th>
+          <th>Caballos</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Datos de ejemplo -->
+        <tr>
+          <td>Febrero 2024</td>
+          <td>Fecha 1: Sabado 17 y Domingo 18</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Febrero 2024</td>
+          <td>Fecha 1: Sabado 17 y Domingo 18</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Febrero 2024</td>
+          <td>Fecha 2: Sabado 24 y Domingo 25</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Marzo 2024</td>
+          <td>Fecha 2: Sabado 02 y Domingo 03</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Llanquihue</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Marzo 2024</td>
+          <td>Fecha 2: Sabado 09 y Domingo 10</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Marzo 2024</td>
+          <td>Fecha 2: Sabado 16 y Domingo 17</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Marzo 2024</td>
+          <td>Fecha 2: Sabado 23 y Domingo 24</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr>
+          <td>Marzo 2024</td>
+          <td>Fecha 2: Viernes 29 Sabado 30 y Domingo 31</td>
+          <td>Juan Pérez y Pedro González</td>
+          <td>Arica</td>
+          <td>Caballo A y Caballo B</td>
+          <td>18 Puntos</td>
+        </tr>
+        <!-- Añade más filas dinámicamente -->
+      </tbody>
+    </table>
+    
+    <table id="association-table" class="hidden">
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th>Collera Completa</th>
+          <th>Asociación</th>
+          <th>Caballos</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Aquí se llenan los datos dinámicamente según la asociación -->
+      </tbody>
+    </table>
+    
+    <table id="zone-table" class="hidden">
+      <thead>
+        <tr>
+          <th>Zona</th>
+          <th>Collera Completa</th>
+          <th>Asociación</th>
+          <th>Caballos</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="zone-norte">
+          <td>Norte</td>
+          <td>Juan Soto y Martín Gómez</td>
+          <td>Asociación Arica</td>
+          <td>Caballo X y Caballo Y</td>
+          <td>18 Puntos</td>
+        </tr>
+        <tr class="zone-centro">
+          <td>Centro</td>
+          <td>Pedro López y Mario Torres</td>
+          <td>Asociación Santiago</td>
+          <td>Caballo Z y Caballo W</td>
+          <td>20 Puntos</td>
+        </tr>
+        <tr class="zone-sur">
+          <td>Sur</td>
+          <td>Fernando Ruiz y Carlos Díaz</td>
+          <td>Asociación Llanquihue</td>
+          <td>Caballo A y Caballo B</td>
+          <td>22 Puntos</td>
+        </tr>
+        <!-- Más datos para las zonas -->
+      </tbody>
+    </table>
+    
+    <script>
+      function updateFilters() {
+        const filterType = document.getElementById("filter-type").value;
+        const monthFilter = document.getElementById("month-filter");
+        const associationFilter = document.getElementById("association-filter");
+        const zoneFilter = document.getElementById("zone-filter");
+        const generalTable = document.getElementById("general-table");
+        const associationTable = document.getElementById("association-table");
+        const zoneTable = document.getElementById("zone-table");
+    
+        monthFilter.classList.add("hidden");
+        associationFilter.classList.add("hidden");
+        zoneFilter.classList.add("hidden");
+        generalTable.classList.add("hidden");
+        associationTable.classList.add("hidden");
+        zoneTable.classList.add("hidden");
+    
+        if (filterType === "weekend") {
+          monthFilter.classList.remove("hidden");
+          generalTable.classList.remove("hidden");
+        } else if (filterType === "association") {
+          associationFilter.classList.remove("hidden");
+          associationTable.classList.remove("hidden");
+        } else if (filterType === "zone") {
+          zoneFilter.classList.remove("hidden");
+          zoneTable.classList.remove("hidden");
+        }
+      }
+    
+      function showTableByAssociation() {
+        const association = document.getElementById("association-filter").value;
+        const tbody = document.getElementById("association-table").querySelector("tbody");
+    
+        tbody.innerHTML = ""; // Limpia las filas anteriores
+    
+        if (association === "arica") {
+          tbody.innerHTML += `
+            <tr>
+              <td>Marzo 2024</td>
+              <td>Juan Pérez y Pedro González</td>
+              <td>Arica</td>
+              <td>Caballo A y Caballo B</td>
+              <td>18 Puntos</td>
+            </tr>
+          `;
+        } else if (association === "santiago") {
+          tbody.innerHTML += `
+            <tr>
+              <td>Abril 2024</td>
+              <td>Pedro López y Mario Torres</td>
+              <td>Santiago</td>
+              <td>Caballo C y Caballo D</td>
+              <td>20 Puntos</td>
+            </tr>
+          `;
+        }
+        // Añade más asociaciones según sea necesario
+      }
+    </script>
+
+    
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
